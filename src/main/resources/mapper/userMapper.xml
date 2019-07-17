@@ -3,6 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.first.dao.UserMapper">
+    <!--开启二级缓存-->
+    <cache eviction="FIFO" flushInterval="60000" readOnly="true"/>
+
     <resultMap id="userMap" type="com.first.entity.User">
         <id property="userId" column="user_id"/>
         <result property="userName" column="user_name"/>
@@ -11,4 +14,13 @@
     <select id="getUserByName" resultMap="userMap">
         SELECT * FROM tb_user WHERE user_name = #{userName}
     </select>
+
+    <insert id="insertUsers">
+        INSERT into tb_user (user_id,user_name,user_age) VALUES 
+        <foreach item="item" collection="list" separator=",">
+            (#{item.userId},#{item.userName},#{item.userAge})
+        </foreach>
+    </insert>
+
+
 </mapper>

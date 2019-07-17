@@ -66,6 +66,11 @@
       <artifactId>spring-jdbc</artifactId>
       <version>4.3.7.RELEASE</version>
     </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-orm</artifactId>
+          <version>4.3.9.RELEASE</version>
+      </dependency>
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
@@ -187,5 +192,23 @@
       <artifactId>httpclient</artifactId>
       <version>4.5.5</version>
     </dependency>
+    <dependency>
+    <groupId>com.rabbitmq</groupId>
+    <artifactId>amqp-client</artifactId>
+    <version>5.6.0</version>
+    </dependency>
+
+      <!-- hibernate start -->
+      <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-core</artifactId>
+        <version>4.2.3.Final</version>
+      </dependency>
+     <!-- hibernate end -->
+      <dependency>
+          <groupId>com.mchange</groupId>
+          <artifactId>c3p0</artifactId>
+          <version>0.9.5.2</version>
+      </dependency>
   </dependencies>
 </project>

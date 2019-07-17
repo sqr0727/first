@@ -1,8 +1,21 @@
 package com.first.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tb_user")
 public class User {
+    @Id
+    @Column(name = "user_id")
     private String userId;
+
+    @Column(name = "user_name")
     private String userName;
+
+    @Column(name = "user_age")
     private String userAge;
 
     public User() {
